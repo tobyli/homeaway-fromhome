@@ -13,6 +13,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.SearchView;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 
 public class ResultMap extends Activity {
