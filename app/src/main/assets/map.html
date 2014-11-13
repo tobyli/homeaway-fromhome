@@ -15,7 +15,7 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 	<script>
 
-		var map = L.map('map').setView([44.9647, -93.2499], 12);
+		var map = L.map('map').setView([44.97123, -93.25968], 12);
 
 		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
 			maxZoom: 18,
@@ -26,7 +26,7 @@
 		}).addTo(map);
 
 
-		L.marker([44.9647, -93.2499]).addTo(map)
+		L.marker([44.97123, -93.25968]).addTo(map)
 			.bindPopup("<b>Hello world!</b><br />Minneapolis.").openPopup();
 
 		L.circle([51.508, -0.11], 500, {
@@ -35,11 +35,9 @@
 			fillOpacity: 0.7
 		}).addTo(map).bindPopup("I am a circle.");
 		
-		
 
-	
 
-		L.polygon([
+		var stevensSquare = L.polygon([
 			[  
 			                  [  
 			                     44.962688025221603,
@@ -75,9 +73,9 @@
 			weight: 2,
 			fillColor: '#fc8d59',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Stevens Square, MPLS");
+		}).bindPopup("I am Stevens Square, MPLS");
 		
-		L.polygon([
+		var marcyHolmes = L.polygon([
 			[  
 			                  [  
 			                     44.9909180252479,
@@ -201,9 +199,9 @@
 			weight: 2,
 			fillColor: '#ef6548',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Marcy Holmes, MPLS");
+		}).bindPopup("I am Marcy Holmes, MPLS");
 		
-		L.polygon([
+		var seaward = L.polygon([
 		    [  
 		                     [  
 		                        44.9665602638431,
@@ -255,9 +253,9 @@
 			weight: 2,
 			fillColor: '#990000',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Seaward, MPLS");
+		}).bindPopup("I am Seaward, MPLS");
 		
-		L.polygon([
+		var venturaVillage = L.polygon([
 			[  
 			                  [  
 			                     44.962867025221698,
@@ -305,9 +303,9 @@
 			weight: 2,
 			fillColor: '#fdbb84',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Ventura Village, MPLS");
+		}).bindPopup("I am Ventura Village, MPLS");
 		
-		L.polygon([
+		var loringPark = L.polygon([
 		    [  
 		                     [  
 		                        44.9680680252266,
@@ -355,9 +353,9 @@
 			weight: 2,
 			fillColor: '#990000',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Loring Park, MPLS");
+		}).bindPopup("I am Loring Park, MPLS");
 		
-		L.polygon([
+		var phillipsWest = L.polygon([
 			[  
 			                  [  
 			                     44.959109025218289,
@@ -389,9 +387,9 @@
 			weight: 2,
 			fillColor: '#fc8d59',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Phillips West, MPLS");
+		}).bindPopup("I am Phillips West, MPLS");
 		
-		L.polygon([
+		var whitter = L.polygon([
 			[  
 			                  [  
 			                     44.962688025221603,
@@ -431,9 +429,9 @@
 			weight: 2,
 			fillColor: '#fc8d59',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Whittier, MPLS");
+		}).bindPopup("I am Whittier, MPLS");
 		
-		L.polygon([
+		var downtownEast = L.polygon([
 			[  
 			                  [  
 			                     44.981139025238697,
@@ -541,9 +539,9 @@
 			weight: 2,
 			fillColor: '#fdd49e',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Downtown East, MPLS");
+		}).bindPopup("I am Downtown East, MPLS");
 		
-		L.polygon([
+		var northLoop = L.polygon([
 			[  
 			                  [  
 			                     44.992940025249702,
@@ -611,9 +609,9 @@
 			weight: 2,
 			fillColor: '#fdbb84',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am North Loop, MPLS");
+		}).bindPopup("I am North Loop, MPLS");
 		
-		L.polygon([
+		var cedarRiverside = L.polygon([
 		    [  
 		                     [  
 		                        44.9678126220238,
@@ -701,9 +699,9 @@
 			weight: 2,
 			fillColor: '#fef0d9',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Cedar-Riverside, MPLS");
+		}).bindPopup("I am Cedar-Riverside, MPLS");
 		
-		L.polygon([
+		var downtownWest = L.polygon([
 			[  
 			                  [  
 			                     44.981139025238697,
@@ -775,10 +773,10 @@
 			weight: 2,
 			fillColor: '#fdbb84',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Downtown West, MPLS");
+		}).bindPopup("I am Downtown West, MPLS");
 		
 		
-		L.polygon([
+		var midtown = L.polygon([
 		    [  
 		                     [  
 		                        44.959120025218297,
@@ -814,9 +812,9 @@
 			weight: 2,
 			fillColor: '#fdd49e',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Midtown Phillips, MPLS");
+		}).bindPopup("I am Midtown Phillips, MPLS");
 		
-		L.polygon([
+		var eastBank = L.polygon([
 			[  
 			                  [  
 			                     44.9926540252495,
@@ -916,9 +914,9 @@
 			weight: 2,
 			fillColor: '#d7301f',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am East Bank-Nicollet Island, MPLS");
+		}).bindPopup("I am East Bank-Nicollet Island, MPLS");
 		
-		L.polygon([
+		var elliotPark = L.polygon([
 		    [  
 		                     [  
 		                        44.9741660252323,
@@ -982,10 +980,10 @@
 			weight: 2,
 			fillColor: '#ef6548',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Elliot Park, MPLS");
+		}).bindPopup("I am Elliot Park, MPLS");
 		
 		
-		L.polygon([
+		var eastPhillips = L.polygon([
 			[  
 			                  [  
 			                     44.96274902522169,
@@ -1037,9 +1035,9 @@
 			weight: 2,
 			fillColor: '#fc8d59',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am East Phillips, MPLS");
+		}).bindPopup("I am East Phillips, MPLS");
 		
-		L.polygon([
+		var longFellow = L.polygon([
 			[  
 			                  [  
 			                     44.953722695738698,
@@ -1075,9 +1073,9 @@
 			weight: 2,
 			fillColor: '#fc8d59',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am Longfellow, MPLS");
+		}).bindPopup("I am Longfellow, MPLS");
 		
-		L.polygon([
+		var stAnthony = L.polygon([
 			[  
 			                  [  
 			                     44.998703025255089,
@@ -1169,16 +1167,39 @@
 			weight: 2,
 			fillColor: '#fdbb84',
 			fillOpacity: 0.7
-		}).addTo(map).bindPopup("I am St Anthony West, MPLS");
+		}).bindPopup("I am St Anthony West, MPLS");
 		
+		
+		
+	
 		var popup = L.popup();
-
+		
+		
+		
+		var neighborhoods = L.layerGroup([stevensSquare, marcyHolmes, seaward, venturaVillage, loringPark, phillipsWest, whitter, downtownEast, northLoop, cedarRiverside, downtownWest, midtown, eastBank, elliotPark, eastPhillips, longFellow, stAnthony]);
+		
+		neighborhoods.addTo(map);
+		
+		
+		marcyHolmes.on('click', function(e) {popup
+						.setLatLng(e.latlng)
+						.setContent("Marcy")
+						.openOn(map);
+						if(typeof Android != 'undefined'){
+							Android.changeBarContent("Marcy Holmes");
+						}
+					});
+		
+			
+	
+				
 		function onMapClick(e) {
-			popup
-				.setLatLng(e.latlng)
-				.setContent("You clicked the map at " + e.latlng.toString())
-				.openOn(map);
-		}
+					popup
+						.setLatLng(e.latlng)
+						.setContent("You clicked the map at " + e.latlng.toString())
+						.openOn(map);
+				}
+		
 
 		map.on('click', onMapClick);
 
