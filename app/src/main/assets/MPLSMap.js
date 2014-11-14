@@ -1,17 +1,31 @@
 var map = L.map('map').setView([44.97123, -93.26968], 12);
 var neighborhoodJSON = L.geoJson(mpls, {stype: style, onEachFeature: onEachFeature});
-
+var lastLayer = null;
 function onEachFeature(feature, layer){
 	//alert(feature.properties.NAME);
 	//layer.bindPopup("You've clicked " + feature.properties.NAME);
-	layer.on('click', function(e) {L.popup()
-							.setLatLng(e.latlng)
-							.setContent(feature.properties.NAME)
-							.openOn(map);
+	if(typeof Android === 'underfined'){
+	    layer.on({
+	        mouseover: highlightFeature,
+	        mouseout: resetHighlight
+	    });
+	}
+    
+	layer.on('click', function(e) {
 							if(typeof Android != 'undefined'){
+								highlightFeature(e);
+								if(lastLayer != null){
+									resetHighlight(lastLayer);
+								}
+								lastLayer = e;	
 								Android.changeBarContent(feature.properties.NAME);
 							}
+							else{
+								L.popup().setLatLng(e.latlng).setContent(feature.properties.NAME).openOn(map);								
+							}
 						});
+
+						
 }
 function style(feature){
 	var name = feature.properties.NAME;
@@ -19,11 +33,13 @@ function style(feature){
         weight: 1,
         color: '#000000',
         opacity: 0.5,
-        fillOpacity: 0.7,
+        fillOpacity: 0.5,
         fillColor: getColor(name)
     };
 	
 }
+
+
 
 function getColor(name) {
     if(nameColorMap[name] == undefined){
@@ -34,8 +50,28 @@ function getColor(name) {
 	}
 	
 }
+
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 8,
+        opacity: 1,
+        color: '#09F',
+        dashArray: '3'
+
+    });
+
+}
+
+
+
+
 var neighborhoodJSON = L.geoJson(mpls, {style: style, onEachFeature: onEachFeature});
 
+function resetHighlight(e) {
+    neighborhoodJSON.resetStyle(e.target);
+}
 
 L.marker([44.97123, -93.26968]).addTo(map)
 	.bindPopup("<b>Hello world!</b><br />Minneapolis.").openPopup();

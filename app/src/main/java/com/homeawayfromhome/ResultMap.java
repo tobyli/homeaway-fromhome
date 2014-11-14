@@ -5,9 +5,12 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -39,7 +42,7 @@ public class ResultMap extends Activity {
         setContentView(R.layout.activity_result_map);
 
         mBarTextView = (TextView) findViewById(R.id.bar_texview);
-        mBarTextView.setText("I'm a slide bar!\nI'm a slide bar!\nI'm a slide bar!\nI'm a slide bar!\nI'm a slide bar!");
+        mBarTextView.setText("Minneapolis");
         mBarTextView.setTextSize(30);
 
         mWebView = (WebView) findViewById(R.id.webview);
@@ -48,9 +51,16 @@ public class ResultMap extends Activity {
         webSettings.setJavaScriptEnabled(true);
         mWebView.setLayerType(mWebView.LAYER_TYPE_SOFTWARE, null);
         mWebView.loadUrl("file:///android_asset/map.html");
-        mWebView.addJavascriptInterface(new WebAppInterface(this, mBarTextView), "Android");
-
         mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        mWebView.addJavascriptInterface(new WebAppInterface(this, mBarTextView, mLayout), "Android");
+        mWebView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                mLayout.expandPanel((float)0.001);
+                mLayout.collapsePanel();
+                return false;
+            }
+        });
 
 
 
