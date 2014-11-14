@@ -20,7 +20,7 @@ public class WebAppInterface {
     @JavascriptInterface
     public void changeBarContent(String content) {
         mBarTextView.setText(content);
-        mBarTextView.invalidate();
+        mBarTextView.
 
 
     }
