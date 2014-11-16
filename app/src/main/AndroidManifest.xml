@@ -2,14 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.homeawayfromhome" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
+
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/hafh_icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Holo" >
+
         <activity
-            android:name="com.homeawayfromhome.ResultMap"
-            android:label="@string/app_name" >
+            android:name="com.homeawayfromhome.RootMap"
+            android:label="@string/title_activity_home_map"
+            android:theme="@style/CustomActionBarTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +23,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
 
 </manifest>

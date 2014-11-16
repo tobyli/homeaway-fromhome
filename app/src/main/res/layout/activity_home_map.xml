@@ -1,4 +1,4 @@
-<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+ <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/sliding_layout"
     android:layout_width="match_parent"
@@ -52,12 +52,12 @@
                 android:layout_width="100dp"
                 android:layout_height="42dp"
                 android:gravity="center_vertical"
-                android:text="Detail"
+                android:text="Search"
                 android:textSize="14sp"
                 android:textColor="#ffffff"
                 android:drawableLeft="@drawable/ic_action_search"
-                android:id="@+id/button" />
-
+                android:id="@+id/button"
+                android:onClick="search"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -87,7 +87,7 @@
                 android:textSize="16sp" />
 
         </LinearLayout>
-        </LinearLayout>
+    </LinearLayout>
 
 
 
@@ -97,3 +97,5 @@
 
 
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+

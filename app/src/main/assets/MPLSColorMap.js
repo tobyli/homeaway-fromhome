@@ -49,7 +49,7 @@ var nameColorMap = {
 	"Lowry Hill East":"#fdd49e",
 	"Hawthorne":"#fdd49e",
 	"Webber-Camden":"#fee8c8",
-	"East Bank-Nicollet Island":"#fee8c8",
+	"Nicollet Island":"#fee8c8",
 	"Midtown Phillips":"#fee8c8",
 	"Downtown West":"#ef6548",
 	"Beltrami":"#d7301f",

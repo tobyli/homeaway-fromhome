@@ -3,11 +3,11 @@ package com.homeawayfromhome;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.LayoutInflater;
+import android.os.Handler;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -15,6 +15,7 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -26,7 +27,11 @@ public class ResultMap extends Activity {
     private WebView mWebView;
     private SearchView mSearchView;
     private TextView mBarTextView;
+    private TextView mBarTextView2;
+    private TextView mBarTextView3;
+    private TextView mScoreText;
     private SlidingUpPanelLayout mLayout;
+    Button detailButton;
 
     class MyWebViewClient extends WebViewClient {
         @Override
@@ -41,9 +46,15 @@ public class ResultMap extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_map);
 
-        mBarTextView = (TextView) findViewById(R.id.bar_texview);
+        mBarTextView = (TextView) findViewById(R.id.bar_textview);
         mBarTextView.setText("Minneapolis");
-        mBarTextView.setTextSize(30);
+
+
+        mBarTextView2 = (TextView) findViewById(R.id.bar_textview2);
+        mBarTextView2.setText(Html.fromHtml("Similar to <b>Madison</b>, <b>Minneapolis</b> is a spooky city with ghosts and zombies everywhere. There are also quite a lot of drunk people on the street."));
+
+        mBarTextView3 = (TextView) findViewById(R.id.bar_textview3 );
+        mBarTextView3.setText(Html.fromHtml("Popular attractions of <b>Minneapolis</b> are <b><a href=http://en.wikipedia.org/wiki/Zombie>Zombie's Nest</a></b> and <b><a href=http://en.wikipedia.org/wiki/Haunted_house>Haunted House</a></b>. <b>Minneaplis</b> is also famous for its deep-fried bloody pie on-a-stick"));
 
         mWebView = (WebView) findViewById(R.id.webview);
         mWebView.setWebViewClient(new MyWebViewClient());
@@ -52,12 +63,20 @@ public class ResultMap extends Activity {
         mWebView.setLayerType(mWebView.LAYER_TYPE_SOFTWARE, null);
         mWebView.loadUrl("file:///android_asset/map.html");
         mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
-        mWebView.addJavascriptInterface(new WebAppInterface(this, mBarTextView, mLayout), "Android");
+        mWebView.addJavascriptInterface(new WebAppInterface(this, mBarTextView, mBarTextView2, mBarTextView3, mLayout), "Android");
         mWebView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                mLayout.expandPanel((float)0.001);
-                mLayout.collapsePanel();
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mLayout.expandPanel((float)0.001);
+                        mLayout.collapsePanel();
+
+                    }
+                }, 50);
+
                 return false;
             }
         });
@@ -70,9 +89,11 @@ public class ResultMap extends Activity {
         actionBar.setTitle("Result Map");
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#db4437")));
 
+        detailButton = (Button) findViewById(R.id.button);
+        detailButton.getBackground().setColorFilter(Color.parseColor("#db4437"), PorterDuff.Mode.OVERLAY);
 
-
-
+        mScoreText = (TextView) findViewById(R.id.bar_textScoreView);
+        mScoreText.setText(Html.fromHtml("Similarity Score: <b>7.2/10</b>"));
     }
 
 
@@ -81,7 +102,7 @@ public class ResultMap extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_result_map, menu);
+        getMenuInflater().inflate(R.menu.menu_root_map, menu);
 
         mSearchView = ((SearchView)menu.findItem(R.id.searchView).getActionView());
 
