@@ -16,6 +16,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
@@ -31,7 +32,8 @@ public class AwayMapFragmentTab extends Fragment {
     private TextView mBarTextView2;
     private TextView mBarTextView3;
     private TextView mScoreText;
-    private SlidingUpPanelLayout mLayout;
+    private ImageView mImageView;
+    public SlidingUpPanelLayout mLayout;
     Button searchButton;
 
     public AwayMapFragmentTab(){
@@ -63,8 +65,12 @@ public class AwayMapFragmentTab extends Fragment {
         mWebView.setLayerType(mWebView.LAYER_TYPE_SOFTWARE, null);
         mWebView.loadUrl("file:///android_asset/MPLSMap.html");
         mLayout = (SlidingUpPanelLayout) rootView.findViewById(R.id.sliding_layout);
+        mLayout.collapsePanel();
         mLayout.setBackgroundColor(Color.parseColor("#dfdfdf"));
-        mWebView.addJavascriptInterface(new WebAppInterface(rootActivity, mBarTextView, mBarTextView2, mBarTextView3, mLayout), "Android");
+        searchButton = (Button) rootView.findViewById(R.id.button);
+        searchButton.getBackground().setColorFilter(Color.parseColor("#db4437"), PorterDuff.Mode.OVERLAY);
+        mImageView = (ImageView) rootView.findViewById(R.id.imageview);
+        mWebView.addJavascriptInterface(new WebAppInterface(rootActivity, mBarTextView, mBarTextView2, mBarTextView3, mLayout, searchButton, mWebView, mImageView), "Android");
         mWebView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -88,8 +94,7 @@ public class AwayMapFragmentTab extends Fragment {
 
 
 
-        searchButton = (Button) rootView.findViewById(R.id.button);
-        searchButton.getBackground().setColorFilter(Color.parseColor("#db4437"), PorterDuff.Mode.OVERLAY);
+
 
 
         mScoreText = (TextView) rootView.findViewById(R.id.bar_textScoreView);
@@ -113,11 +118,10 @@ public class AwayMapFragmentTab extends Fragment {
 
     }
 
-    public void search(View view){
-        //response to the search button
-        Intent intent = new Intent(rootActivity, ResultMap.class);
-        startActivity(intent);
-        rootActivity.overridePendingTransition(0, 0);
+
+
+    public void zoomDetail(){
+        mWebView.loadUrl("javascript:zoomDetail()");
     }
 
 }

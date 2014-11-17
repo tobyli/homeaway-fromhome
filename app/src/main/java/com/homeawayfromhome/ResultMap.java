@@ -16,6 +16,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -32,6 +33,7 @@ public class ResultMap extends Activity {
     private TextView mScoreText;
     private SlidingUpPanelLayout mLayout;
     Button detailButton;
+    private ImageView mImageView;
 
     class MyWebViewClient extends WebViewClient {
         @Override
@@ -63,7 +65,9 @@ public class ResultMap extends Activity {
         mWebView.setLayerType(mWebView.LAYER_TYPE_SOFTWARE, null);
         mWebView.loadUrl("file:///android_asset/map.html");
         mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
-        mWebView.addJavascriptInterface(new WebAppInterface(this, mBarTextView, mBarTextView2, mBarTextView3, mLayout), "Android");
+        mImageView = (ImageView) findViewById(R.id.imageview);
+
+        mWebView.addJavascriptInterface(new WebAppInterface(this, mBarTextView, mBarTextView2, mBarTextView3, mLayout, detailButton, mWebView, mImageView), "Android");
         mWebView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

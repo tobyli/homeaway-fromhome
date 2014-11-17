@@ -87,10 +87,23 @@ public class RootMap extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
     public void search(View view){
         //response to the search button
         awayMapTab.select();
+
     }
+
+    public void zoomDetail(View view){
+        //response to the search button
+        ((AwayMapFragmentTab) awayFragmentMapTab).zoomDetail();
+
+    }
+
 
 
 

@@ -23,6 +23,7 @@ public class TabListener implements ActionBar.TabListener {
     public void onTabSelected(Tab tab, FragmentTransaction ft) {
         
         ft.replace(R.id.activity_main, fragment);
+
     }
 
     // When a tab is unselected, we have to hide it from the user's view.

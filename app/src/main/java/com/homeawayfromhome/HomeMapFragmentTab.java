@@ -16,6 +16,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
@@ -32,8 +33,10 @@ public class HomeMapFragmentTab extends Fragment {
     private TextView mBarTextView2;
     private TextView mBarTextView3;
     private TextView mScoreText;
-    private SlidingUpPanelLayout mLayout;
+    public SlidingUpPanelLayout mLayout;
     Button searchButton;
+    private ImageView mImageView;
+
     public HomeMapFragmentTab(){
 
     }
@@ -61,11 +64,13 @@ public class HomeMapFragmentTab extends Fragment {
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         mWebView.setLayerType(mWebView.LAYER_TYPE_SOFTWARE, null);
-        mWebView.loadUrl("file:///android_asset/map.html");
+        mWebView.loadUrl("file:///android_asset/MadisonMap.html");
         mLayout = (SlidingUpPanelLayout) rootView.findViewById(R.id.sliding_layout);
+        mLayout.collapsePanel();
         mLayout.setBackgroundColor(Color.parseColor("#efefef"));
+        mImageView = (ImageView) rootView.findViewById(R.id.imageview);
 
-        mWebView.addJavascriptInterface(new WebAppInterface(rootActivity, mBarTextView, mBarTextView2, mBarTextView3, mLayout), "Android");
+        mWebView.addJavascriptInterface(new WebAppInterface(rootActivity, mBarTextView, mBarTextView2, mBarTextView3, mLayout, searchButton, mWebView, mImageView), "Android");
         mWebView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -113,6 +118,8 @@ public class HomeMapFragmentTab extends Fragment {
 
 
     }
+
+
 
     public void search(View view){
         //response to the search button

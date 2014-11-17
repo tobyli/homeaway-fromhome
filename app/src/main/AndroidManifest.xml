@@ -14,7 +14,7 @@
 
         <activity
             android:name="com.homeawayfromhome.RootMap"
-            android:label="@string/title_activity_home_map"
+            android:label="Home Away From Home"
             android:theme="@style/CustomActionBarTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
