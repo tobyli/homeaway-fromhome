@@ -1,0 +1,102 @@
+ <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:panelHeight="68dp"
+    sothree:shadowHeight="20dp">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/dragView"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal"
+            android:id="@+id/horizontalView"
+            android:gravity="center"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp">
+            <LinearLayout
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/topView">
+                <TextView
+                    android:id="@+id/bar_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:gravity="center_vertical|left"
+                    android:textSize="22sp" />
+                <TextView
+                    android:id="@+id/bar_textScoreView"
+                    android:layout_width="match_parent"
+                    android:layout_height="23dp"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#878787"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="42dp"
+                android:gravity="center_vertical"
+                android:text="Find Similar In Minneapolis"
+                android:textSize="6sp"
+                android:textColor="#ffffff"
+                android:drawableLeft="@drawable/ic_action_search"
+                android:id="@+id/button"
+                android:onClick="search"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/description"
+            android:gravity="top|center_horizontal"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp">
+
+            <TextView
+                android:id="@+id/bar_textview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|top"
+                android:textSize="16sp" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:src="@drawable/cheese_photo"
+                android:gravity="top"/>
+            <TextView
+                android:id="@+id/bar_textview3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|top"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+<!-- From: file:/Users/zihong/csci5115/homeaway-fromhome/app/src/main/res/layout/activity_home_map.xml -->

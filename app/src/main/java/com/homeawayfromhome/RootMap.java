@@ -35,25 +35,43 @@ public class RootMap extends Activity {
     public ActionBar.Tab homeMapTab, awayMapTab;
     Fragment homeFragmentMapTab = new HomeMapFragmentTab(this);
     Fragment awayFragmentMapTab = new AwayMapFragmentTab(this);
+//    public final static String tab_status = "Madison";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_root_map);
+
+        Intent intent = getIntent();
+        String tab_status = intent.getStringExtra(Exploring.S_TAB);
+        String tab_status_1 = intent.getStringExtra(ResultList.S_TAB);
+
         ActionBar actionBar = this.getActionBar();
         //actionBar.setDisplayShowHomeEnabled(false);
         //actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#cfcfcf")));
 
-
+        Button btlist = (Button) findViewById(R.id.button_list);
 
         homeMapTab = actionBar.newTab().setText("               Madison");
         awayMapTab = actionBar.newTab().setText("            Minneapolis");
         homeMapTab.setTabListener(new TabListener(homeFragmentMapTab));
         awayMapTab.setTabListener(new TabListener(awayFragmentMapTab));
+//        btlist.setOnClickListener(new View.OnClickListener(awayFragmentList));
+
 
         actionBar.addTab(homeMapTab);
         actionBar.addTab(awayMapTab);
+
+       if(tab_status.equals("Madison"))
+         {homeMapTab.select();}
+        else if(tab_status.equals("Minneapolis"))
+         {awayMapTab.select();}
+
+       if(tab_status_1.equals("Minneapolis"))
+        {awayMapTab.select();}
+
 
         actionBar.setTitle("Map Search");
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#db4437")));
@@ -104,6 +122,16 @@ public class RootMap extends Activity {
 
     }
 
+//    public void goList(View view){
+//        awayFragmentList.select();
+//    }
+
+    public void goList(View view)
+    {
+        Intent intent = new Intent(this, ResultList.class);
+        startActivity(intent);
+
+    }
 
 
 

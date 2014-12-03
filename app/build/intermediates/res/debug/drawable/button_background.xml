@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/tab_highlight">
+    </item>
+</selector><!-- From: file:/Users/zihong/csci5115/homeaway-fromhome/app/src/main/res/drawable/button_background.xml -->

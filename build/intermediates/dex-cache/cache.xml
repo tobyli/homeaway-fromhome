@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/pre-dexed/debug/classes-5d2f559d3f060d71978afb0c7ac1100b465edbcc.jar"
+        jar="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136"/>
+    <item
+        dex="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-c6f8bbf2fcccd18cb407782a19ca6bdeb088f70b.jar"
+        jar="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
+    <item
+        dex="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/pre-dexed/debug/classes-486b37f37fa9ec56069dc05cd028e147ab909e87.jar"
+        jar="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/exploded-aar/com.sothree.slidinguppanel/library/2.0.2/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="579a13f257d393fa870a50809656089cdbeb7506"/>
+    <item
+        dex="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/pre-dexed/debug/library-2.4.0-ba6a4a373abb72ada6e0b9b2e9a7acffdfc7f48d.jar"
+        jar="/Users/zihong/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb"/>
+    <item
+        dex="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/pre-dexed/debug/classes-b6b13845482981ad6370695557af7c8a966303e3.jar"
+        jar="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da"/>
+    <item
+        dex="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-645dae6d0425390bde06d5049c59828204d82655.jar"
+        jar="/Users/zihong/Downloads/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
+    <item
+        dex="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/pre-dexed/debug/classes-fc54265d7374b9d1a741393481ecd7a1f02ea9bb.jar"
+        jar="/Users/zihong/csci5115/homeaway-fromhome/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
+
+</pre-dex-items>

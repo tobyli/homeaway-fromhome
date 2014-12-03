@@ -52,6 +52,15 @@ public class AwayMapFragmentTab extends Fragment {
         mBarTextView.setText("Minneapolis");
 
 
+//        Button btlist = (Button) rootView.findViewById(R.id.button_list);
+//        btlist.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(, ResultList.class);
+//                  startActivity(intent);
+//            }
+//        });
+
         mBarTextView2 = (TextView) rootView.findViewById(R.id.bar_textview2);
         mBarTextView2.setText(Html.fromHtml("Similar to <b>Madison</b>, <b>Minneapolis</b> is a spooky city with ghosts and zombies everywhere. There are also quite a lot of drunk people on the street."));
 
@@ -123,5 +132,12 @@ public class AwayMapFragmentTab extends Fragment {
     public void zoomDetail(){
         mWebView.loadUrl("javascript:zoomDetail()");
     }
+
+//    public void goList(View view){
+//        //response to the listview button
+////        rootActivity.awayMapTab.select();
+//        Intent intent = new Intent(this, ResultList.class);
+//        startActivity(intent);
+//    }
 
 }

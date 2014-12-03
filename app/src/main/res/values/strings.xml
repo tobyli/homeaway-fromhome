@@ -2,8 +2,34 @@
 <resources>
 
     <string name="app_name">Home Away From Home</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_home_map">HomeMap</string>
+    <string name="title_activity_exploring">Exploring</string>
+    <string name="title_activity_familiar_place">FamiliarPlace</string>
+    <string name="title_activity_new_place">NewPlace</string>
+    <string name="title_activity_signup">Signup</string>
+    <string name="title">Home Away From Home</string>
+    <string name="most_familiar">Most Familiar City</string>
+    <string name="second_familiar">Other Familiar Cities</string>
+    <string name="new_city">New City or Neighborhood</string>
+    <string name="new_ex">ex. Minneapolis, MN</string>
+    <string name="you_familiar">ex. Madison, WI</string>
+    <string name="button_login">Log In</string>
+    <string name="button_signup">Sign Up</string>
+    <string name="button_signupfb">Sign Up with Facebook</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="start_exploring">Start Exploring!</string>
+    <string name="button_home">Maps of Madison</string>
+    <string name="button_new">Maps of Minneapolis</string>
+    <string name="Congratulations">Congratulations!</string>
+    <string name="createAccount">Create Account</string>
+    <string name="password_again">Retype your password</string>
+    <string name="Madison">Click on the Map of Madison to identify your favorite places and find similar ones in Minneapolis!</string>
+    <string name="Minneapolis">Click on the Map of Minneapolis to explore your new home!</string>
+    <string name="button_home_neighborhood">Neighborhoods in Madison</string>
+    <!-- <string name="title_activity_result_map">ResultMap</string> -->
+
+    <string name="title_activity_result_list">ResultList</string>
+    <string name="title_activity_create_account">CreateAccount</string>
 
 </resources>

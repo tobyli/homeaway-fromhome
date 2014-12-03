@@ -4,16 +4,43 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
-
         android:allowBackup="true"
-        android:icon="@drawable/hafh_icon"
+        android:icon="@drawable/launch_icon"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo" >
-
+        android:theme="@android:style/Theme.Holo.Light" >
         <activity
             android:name="com.homeawayfromhome.RootMap"
+            android:icon="@drawable/actionbar_icon"
+            android:label="Home Away From Home"
+            android:theme="@style/CustomActionBarTheme" >
+        </activity>
+        <activity
+            android:name="com.homeawayfromhome.Exploring"
+            android:icon="@drawable/actionbar_icon"
+            android:label="@string/title_activity_exploring"
+            android:theme="@style/CustomActionBarTheme" >
+        </activity>
+        <activity
+            android:name="com.homeawayfromhome.FamiliarPlace"
+            android:icon="@drawable/actionbar_icon"
+            android:label="@string/title_activity_familiar_place"
+            android:theme="@style/CustomActionBarTheme" >
+        </activity>
+        <activity
+            android:name="com.homeawayfromhome.NewPlace"
+            android:icon="@drawable/actionbar_icon"
+            android:label="@string/title_activity_new_place"
+            android:theme="@style/CustomActionBarTheme" >
+        </activity>
+        <activity
+            android:name="com.homeawayfromhome.Signup"
+            android:icon="@drawable/launch_icon"
             android:label="Home Away From Home"
             android:theme="@style/CustomActionBarTheme" >
             <intent-filter>
@@ -21,6 +48,25 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homeawayfromhome.Login"
+            android:icon="@drawable/actionbar_icon"
+            android:label="@string/title_activity_login"
+            android:theme="@style/CustomActionBarTheme"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:icon="@drawable/actionbar_icon"
+            android:theme="@style/CustomActionBarTheme"
+            android:name="com.homeawayfromhome.ResultList"
+            android:label="@string/title_activity_result_list" >
+        </activity>
+        <activity
+            android:name="com.homeawayfromhome.CreateAccount"
+            android:label="@string/title_activity_create_account"
+            android:icon="@drawable/actionbar_icon"
+            android:theme="@style/CustomActionBarTheme">
         </activity>
     </application>
 
