@@ -1,0 +1,56 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.homeawayfromhome.NewPlace">
+
+
+    <TextView
+        android:text="@string/new_city"
+        android:textSize="22dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText android:id="@+id/new_ex"
+        android:layout_marginBottom="300dp"
+        android:layout_marginLeft="35dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/new_ex" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/button_background"
+            android:textColor="@color/buttontext"
+            android:text="Back"
+            android:onClick="back"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/button_background"
+            android:textColor="@color/buttontext"
+            android:text="Next"
+            android:onClick="next"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+<!-- From: file:/Users/zihong/csci5115/homeaway-fromhome/app/src/main/res/layout/activity_new_place.xml -->

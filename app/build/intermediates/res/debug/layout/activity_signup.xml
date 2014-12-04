@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.homeawayfromhome.sign_up">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
+        android:scaleType="center"
+        android:src="@drawable/launch_icon" />
+
+    <TextView
+        android:text="@string/title"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_background"
+        android:textColor="@color/buttontext"
+        android:text="@string/button_login"
+
+        android:onClick="logIn"/>
+
+    <Button
+
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_background"
+        android:text="@string/button_signup"
+        android:textColor="@color/buttontext"
+        android:onClick="signUp"/>
+
+    <Button
+
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="60dp"
+        android:background="@drawable/fbbutton_background"
+        android:textColor="@color/buttontext"
+        android:text="@string/button_signupfb"
+        android:onClick="signUpFB"/>
+
+</LinearLayout>
+<!-- From: file:/Users/zihong/csci5115/homeaway-fromhome/app/src/main/res/layout/activity_signup.xml -->
